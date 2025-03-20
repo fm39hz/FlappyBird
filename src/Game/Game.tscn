@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dft3apn4kbvcx"]
+
+[ext_resource type="Script" uid="uid://d3u8t4b8hexnm" path="res://src/Game/Game.cs" id="1_2c5w0"]
+[ext_resource type="PackedScene" uid="uid://cs43hsyrcdeyf" path="res://src/Bird/Bird.tscn" id="2_kqvf5"]
+[ext_resource type="PackedScene" uid="uid://dh6gt1w6oq0ks" path="res://src/GameCamera/GameCamera.tscn" id="3_lqjwq"]
+[ext_resource type="PackedScene" uid="uid://cbyite6emme5b" path="res://src/Menu/Menu.tscn" id="4_7omc5"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_2c5w0")
+
+[node name="Bird" parent="." instance=ExtResource("2_kqvf5")]
+unique_name_in_owner = true
+
+[node name="GameCamera" parent="." instance=ExtResource("3_lqjwq")]
+unique_name_in_owner = true
+
+[node name="MenuUi" parent="." instance=ExtResource("4_7omc5")]
+unique_name_in_owner = true

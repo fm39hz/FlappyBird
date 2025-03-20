@@ -1,0 +1,18 @@
+{
+	"$schema": "https://chickensoft.games/schemas/addons.schema.json",
+	"addons": {
+		"imrp": {
+			"url": "https://github.com/MakovWait/improved_resource_picker",
+			"subfolder": "addons/imrp",
+		},
+		"AsepriteWizard": {
+			"url": "https://github.com/viniciusgerevini/godot-aseprite-wizard",
+			"checkout": "godot_4",
+			"subfolder": "addons/AsepriteWizard",
+		},
+		"input_helper": {
+			"url": "https://github.com/nathanhoad/godot_input_helper",
+			"subfolder": "addons/input_helper",
+		},
+	}
+}

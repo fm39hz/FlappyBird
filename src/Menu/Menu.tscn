@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbyite6emme5b"]
+
+[ext_resource type="Script" uid="uid://dbfa3fxxtyu22" path="res://src/Menu/Menu.cs" id="1_prbfh"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_prbfh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 44.6667
+text = "Tap to Start"
+horizontal_alignment = 3
+vertical_alignment = 1

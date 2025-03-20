@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=4 uid="uid://cs43hsyrcdeyf"]
+
+[ext_resource type="Script" uid="uid://5eou8p24t18j" path="res://src/Bird/Bird.cs" id="1_wvxuy"]
+
+[sub_resource type="Animation" id="Animation_uhf6m"]
+resource_name = "Alive"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BirdBlue:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_56vsh"]
+_data = {
+&"Alive": SubResource("Animation_uhf6m")
+}
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_wvxuy"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIgAAABgAAAAcAQAAUklGRhQBAABXRUJQVlA4TAcBAAAvIcAFEE+gppEU6Bycg6txhlqU0NG+NtQEAMG4qaGNcgrKsYeiRlKY+yEFJ80zLlCAjjr/AYD/193TUnEIESJGJO7OtABubNtxGylT+jLEn5KMEhzvbuDPoIIvdkCmgLanDoh213EJEf1X2LZto3Tv6gwAJFEjkg41L09xNa+LTwDiYl5SYb08RBwiZ3sX7xAv9phSgpfUMluPzI9JHNg8MeFPPmYjGUWSPUgXv272yDnzKDfbcn6BQTeSIMP9RToE1Xu9JarqlrNDDKqNGqreydYUmmiN9Q73uy46hyM6h0NWa5QNiPYvHpMMIc1IDqhSq8NDj5ek27jwH6FxOBxuHQ4M9Q57dgA=")
+size_override = Vector2(34, 24)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wvxuy"]
+radius = 5.0
+height = 12.0
+
+[node name="Bird" type="CharacterBody2D"]
+script = ExtResource("1_wvxuy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_56vsh")
+}
+
+[node name="BirdBlue" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -6)
+texture = SubResource("PortableCompressedTexture2D_wvxuy")
+hframes = 2
+vframes = 2
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://asset/bird_blue.ase"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "f2f3216ca8d2223321bd55f01f23ce9b"
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wvxuy")
+metadata/_edit_lock_ = true
