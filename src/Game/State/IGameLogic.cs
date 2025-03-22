@@ -2,6 +2,9 @@ namespace FlappyBird.Game;
 
 using Chickensoft.LogicBlocks;
 
-public interface IGameLogic : ILogicBlock<GameState>;
+public interface IGameLogic : ILogicBlock<GameLogic.State>;
 
-public record GameState : StateLogic<GameState>;
+[LogicBlock(typeof(State))]
+public partial class GameLogic : LogicBlock<GameLogic.State>, IGameLogic {
+	public override Transition GetInitialState() => throw new NotImplementedException();
+}
