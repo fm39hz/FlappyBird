@@ -1,26 +1,23 @@
 namespace FlappyBird.Test;
 
 using System.Threading.Tasks;
+using Bird;
 using Chickensoft.GoDotTest;
 using Chickensoft.GodotTestDriver;
-using Game;
 
-public class GameTest(Node testScene) : TestClass(testScene) {
+public class BirdTest(Node testScene) : TestClass(testScene) {
 	private Fixture _fixture = null!;
-	private Game _game = null!;
+	private Bird _bird = null!;
 
 	[SetupAll]
 	public async Task Setup() {
 		_fixture = new Fixture(TestScene.GetTree());
-		_game = await _fixture.LoadAndAddScene<Game>();
+		_bird = await _fixture.LoadAndAddScene<Bird>();
 	}
 
 	[CleanupAll]
 	public void Cleanup() => _fixture.Cleanup();
 
 	[Test]
-	public void TestGameRepo() => _game.GameRepo.TestAvailable();
-
-	[Test]
-	public void TestBirdAvailable() => _game.Bird.TestAvailable();
+	public void TestBirdRepo() => _bird.BirdRepo.TestAvailable();
 }
